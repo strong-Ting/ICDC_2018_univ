@@ -71,13 +71,58 @@ assign P2 = P0 +6'd8;
 assign P3 = P0 +6'd9;
 //
 
+//control singal
+always@(*)
+begin
+    case(state_cs)
+    READ:
+    begin
+        IROM_rd = 1'd1;
+        IRAM_valid = 1'd0;
+        busy = 1'd1;
+    end
+    IDLE_CMD:
+    begin
+        IROM_rd = 1'd0;
+        IRAM_valid = 1'd0; 
+        busy = 1'd0;
+    end
+    OP:
+    begin
+        IROM_rd = 1'd0; 
+        IRAM_valid = 1'd0; 
+        busy = 1'd1; 
+    end
+    WRITE:
+    begin
+        IROM_rd = 1'd0; 
+        IRAM_valid = 1'd1; 
+        busy = 1'd1; 
+    end
+    endcase
+end
+//
+
+//IROM_A counter
+always@(posedge clk or negedge reset)
+begin
+    if(reset == 1'd1) IROM_A <= 6'd0;
+    else if(IROM_rd == 1'd1)
+    begin
+        if(IROM_A == 6'd63) IROM_A <= 6'd0;
+        else IROM_A <= IROM_A +6'd1;
+    end
+end
+//
+
+
 //output logic
 always@(negedge clk)
 begin
     case(state_cs)
     READ:
     begin
-        if(IROM_rd == 1'd1) ImageBuffer[IRAM_A] <= IROM_Q;
+        if(IROM_rd == 1'd1) ImageBuffer[IROM_A] <= IROM_Q;
     end
     IDLE_CMD:
     begin
