@@ -112,7 +112,7 @@ end
 //
 
 //IROM_A counter
-always@(posedge clk or negedge reset)
+always@(posedge clk)
 begin
     if(reset == 1'd1) IROM_A <= 6'd0;
     else if(IROM_rd == 1'd1)

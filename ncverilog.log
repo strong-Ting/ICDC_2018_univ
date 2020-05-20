@@ -1,0 +1,76 @@
+ncverilog: 11.10-s072: (c) Copyright 1995-2013 Cadence Design Systems, Inc.
+TOOL:	ncverilog	11.10-s072: Started on May 20, 2020 at 11:46:55 CST
+ncverilog
+	testfixture.v
+	LCD_CTRL.v
+	+define+tb1
+	+access+r
+Recompiling... reason: file './LCD_CTRL.v' is newer than expected.
+	expected: Wed May 20 11:29:03 2020
+	actual:   Wed May 20 11:46:37 2020
+file: LCD_CTRL.v
+	module worklib.LCD_CTRL:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.LCD_CTRL:v <0x066914e3>
+			streams:   8, words:  3977
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  4       4
+		Registers:               31      31
+		Scalar wires:            10       -
+		Vectored wires:           8       -
+		Always blocks:            9       9
+		Initial blocks:           8       8
+		Cont. assignments:        1       3
+		Pseudo assignments:       1       1
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.test:v
+Loading snapshot worklib.test:v .................... Done
+*Verdi3* Loading libsscore_ius111.so
+*Verdi3* : Enable Parallel Dumping.
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+FSDB Dumper for IUS, Release Verdi3_2013.07, Linux, 07/04/2013
+(C) 1996 - 2013 by Synopsys, Inc.
+*Verdi3* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi3* : Create FSDB file 'LCD_CTRL.fsdb'
+*Verdi3* : Begin traversing the scopes, layer (0).
+*Verdi3* : End of traversing.
+*Verdi3* : Begin traversing the MDAs, layer (0).
+*Verdi3* : Enable +mda and +packedmda dumping.
+*Verdi3* : End of traversing the MDAs.
+Simulation interrupted at 100484040 NS + 0
+ncsim> ^C
+ncsim> ^C
+ncsim> ^C
+ncsim> ^C
+ncsim> ^C
+ncsim> ^C
+ncsim> ^C
+ncsim> ^C
+ncsim> ^C
+ncsim> ^C
+ncsim> exit
+ncsim: *F,INTERR: INTERNAL EXCEPTION
+Observed simulation time : 100484040 NS + 0
+-----------------------------------------------------------------
+The tool has encountered an unexpected condition and must exit.
+Contact Cadence Design Systems customer support about this
+problem and provide enough information to help us reproduce it,
+including the logfile that contains this error message.
+  TOOL:	ncsim	11.10-s072
+  HOSTNAME: DICS59
+  OPERATING SYSTEM: Linux 2.6.18-238.el5 #1 SMP Sun Dec 19 14:22:44 EST 2010 x86_64
+  MESSAGE: Unexpected signal #6, program terminated (null)
+-----------------------------------------------------------------
+csi-ncsim - CSI: Cadence Support Investigation, sending details to ncsim.err
+csi-ncsim - CSI: investigation complete, send ncsim.err to Cadence Support
+TOOL:	ncverilog	11.10-s072: Exiting on May 20, 2020 at 11:47:10 CST  (total: 00:00:15)
+ncsim: *W,CNTRCW: Multiple control-C's detected. One more will exit simulation.
+ncsim: *F,CNTRCF: Multiple control-C's detected. Exiting simulation.
