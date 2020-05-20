@@ -27,10 +27,18 @@ reg [5:0]P0;
 wire [5:0]P1,P2,P3;
 reg [5:0] counter;
 reg OP_sig;
+
+reg IROM_rd;
+reg [5:0] IROM_A;
+reg IRAM_valid;
+reg [7:0] IRAM_D;
+reg [5:0] IRAM_A;
+reg busy;
+reg done;
 //
 
 //state switch
-always@(negedge clk or posedge reset)
+always@(posedge clk or posedge reset)
 begin
     if(reset) state_cs<=READ;
     else state_cs<=state_ns;
@@ -117,7 +125,7 @@ end
 
 
 //output logic
-always@(negedge clk)
+always@(posedge clk)
 begin
     case(state_cs)
     READ:
