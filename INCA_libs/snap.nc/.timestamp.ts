@@ -1,0 +1,2 @@
+1589944809 /home/DICS/B10512133/CIC_partice/CIC_2018_univ/testfixture.v
+1589946397 /home/DICS/B10512133/CIC_partice/CIC_2018_univ/LCD_CTRL.v
