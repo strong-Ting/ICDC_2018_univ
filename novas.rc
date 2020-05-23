@@ -162,7 +162,7 @@ StickSet-LineWidth = 1
 StickSet-FillColor = purple6
 StickSet-TextColor = black
 [FSM_Dlg-Print]
-Orientation = Landscape 
+Orientation = Landscape
 [FileBrowser]
 nWaveOpenFsdbDirHistory = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/LCD_CTRL.fsdb,/home/DICS/B10512133/CIC_partice/CIC_2018_univ,
 nWaveRestoreRCDirHistory = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/sig.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ/signal.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ,
@@ -240,6 +240,7 @@ PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
 [QtDialog]
 QwWarnMsgDlg = 650,375,600,250
+QwUserAskDlg = 470,284,324,136
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
@@ -763,7 +764,7 @@ AddImportArgument = TRUE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -tcl
 [turboSchema_Printer_Options]
-Orientation = Landscape 
+Orientation = Landscape
 [turbo_library]
 bdb_load_scope = 
 [verisity]

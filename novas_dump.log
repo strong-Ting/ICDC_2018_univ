@@ -28,7 +28,7 @@ HOST=DICS59
 TERM=xterm
 SHELL=/bin/csh
 ossSimUserSiDir=/usr/cad/agilent/ads/cur/idf/ads_site/si
-SSH_CLIENT=140.125.44.63 2656 22
+SSH_CLIENT=140.125.44.63 2815 22
 DESIGNWARE_HOME=/cad/synopsys_sun/dw_home/cur
 LAKER_PDK_DIR=/usr/cad/TSMC_Process/MSICS/TSMC18/T018MMSP001G1
 CDS_LOAD_ENV=CSF
@@ -66,7 +66,7 @@ CDSHOME=/usr/cad/cadence/IC/cur
 PRIMETIME=/usr/cad/synopsys/primetime/cur
 SYNOPSYS=/usr/cad/synopsys/synthesis/cur
 CDS_Netlisting_Mode=Analog
-LM_LICENSE_FILE=26585@lsnctu:1900@lscic.cic.org.tw:1717@lsnchu:5280@lscic:5280@lsntu:5280@lsncku:
+LM_LICENSE_FILE=26585@lsnctu:1900@lscic.cic.org.tw:1717@lsnchu:5280@lscic:5280@lsnctu:5280@lsncu:
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 HSP_GCC=/usr/cad/synopsys/hspice/cur/hspice/GNU/rhel/gcc-4.7.2/bin/gcc -m64 
 SHLVL=2
@@ -84,7 +84,7 @@ MGC_AMS_HOME=/usr/cad/mentor/adms/cur
 MACHTYPE=x86_64
 LOGNAME=B10512133
 NEOCKTHOME=/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit
-SSH_CONNECTION=140.125.44.63 2656 140.125.44.59 22
+SSH_CONNECTION=140.125.44.63 2815 140.125.44.59 22
 mraarch=amd64
 SFLM_SERVERS=lscic2
 LESSOPEN=|/usr/bin/lesspipe.sh %s
@@ -104,19 +104,22 @@ TCL_LIBRARY=/usr/cad/cadence/INCISIV/cur/tools/inca/files/tcl/library
 Runtime command line arguments:
 argv[0]=ncverilog
 argv[1]=testfixture.v
-argv[2]=LCD_CTRL.v
-argv[3]=+define+tb1
-argv[4]=+access+r
-109 profile - 100
-          CPU/Mem usage: 0.030 sys,  0.080 user,  43.96M sys,  0.00M vm
-110 VC callback profile - scalar:0 vector:0
-111 Sat May 23 14:19:11 2020
-112 pliAppInit
-113 *Verdi3* : Enable Parallel Dumping.
-114 pliAppMiscSet: New Sim Round
-115 LIBSSCORE=found /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius111.so through $LD_LIBRARY_PATH setting.
-116 argv[0]: LCD_CTRL.fsdb
-117 Catch signal 11. Stack trace follows:
+argv[2]=LCD_CTRL_syn.v
+argv[3]=-v
+argv[4]=tsmc13_neg.v
+argv[5]=+define+SDF
+argv[6]=+define+tb3
+argv[7]=+access+r
+112 profile - 100
+          CPU/Mem usage: 0.050 sys,  0.080 user,  49.84M sys,  0.00M vm
+113 VC callback profile - scalar:0 vector:0
+114 Sat May 23 17:45:26 2020
+115 pliAppInit
+116 *Verdi3* : Enable Parallel Dumping.
+117 pliAppMiscSet: New Sim Round
+118 LIBSSCORE=found /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius111.so through $LD_LIBRARY_PATH setting.
+119 argv[0]: LCD_CTRL.fsdb
+120 Catch signal 11. Stack trace follows:
 #0  0xffffe410 in __kernel_vsyscall ()
 #1  0x00418c63 in __read_nocancel () from /lib/libc.so.6
 #2  0x003b8f68 in _IO_file_read_internal () from /lib/libc.so.6
@@ -126,77 +129,79 @@ argv[4]=+access+r
 #6  0x003af6b6 in _IO_getline_info_internal () from /lib/libc.so.6
 #7  0x003af601 in _IO_getline_internal () from /lib/libc.so.6
 #8  0x003ae57a in fgets () from /lib/libc.so.6
-#9  0xf72ad2b9 in ndpGetCallStack () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius111.so
-#10 0xf72d6763 in pliAppDbg_SigHandler () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius111.so
-#11 0xf72acdf1 in catchSignalCB () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius111.so
+#9  0xf6e212b9 in ndpGetCallStack () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius111.so
+#10 0xf6e4a763 in pliAppDbg_SigHandler () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius111.so
+#11 0xf6e20df1 in catchSignalCB () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius111.so
 #12 <signal handler called>
-#13 0x0ab492ea in ?? ()
-#14 0x0ab492e0 in ?? ()
+#13 0x0b704aca in ?? ()
+#14 0x0b704ac0 in ?? ()
 #15 0x00000000 in ?? ()
-118 FSDB Dumper for IUS, Release Verdi3_2013.07, Linux, 07/04/2013
-119 (C) 1996 - 2013 by Synopsys, Inc.
-120 sps_call_fsdbDumpfile at 0 : /home/DICS/B10512133/CIC_partice/CIC_2018_univ/testfixture.v(79)
-121 argv[0]: LCD_CTRL.fsdb
-122 *Verdi3* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-123 *Verdi3* : Create FSDB file 'LCD_CTRL.fsdb'
-124 sps_call_fsdbDumpvars at 0 : /home/DICS/B10512133/CIC_partice/CIC_2018_univ/testfixture.v(80)
-125 *Verdi3* : Begin traversing the scopes, layer (0).
-126 *Verdi3* : End of traversing.
-127 fsdbDumpvars traverse var: profile - 
-          CPU/Mem usage: 0.030 sys,  0.090 user,  186.15M sys,  0.00M vm
-                   incr: 0.000 sys,  0.010 user,  3.65M sys,  0.00M vm
-                   accu: 0.000 sys,  0.010 user,  3.65M sys,  0.00M vm
-              accu incr: 0.000 sys,  0.010 user,  3.65M sys,  0.00M vm
+121 FSDB Dumper for IUS, Release Verdi3_2013.07, Linux, 07/04/2013
+122 (C) 1996 - 2013 by Synopsys, Inc.
+123 sps_call_fsdbDumpfile at 0 : /home/DICS/B10512133/CIC_partice/CIC_2018_univ/testfixture.v(79)
+124 argv[0]: LCD_CTRL.fsdb
+125 *Verdi3* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+126 *Verdi3* : Create FSDB file 'LCD_CTRL.fsdb'
+127 sps_call_fsdbDumpvars at 0 : /home/DICS/B10512133/CIC_partice/CIC_2018_univ/testfixture.v(80)
+128 *Verdi3* : Begin traversing the scopes, layer (0).
+129 Cell instance `test.LCD_CTRL.\r2549/U1_1_4 '.
+130 *Verdi3* : End of traversing.
+131 fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.630 user,  199.94M sys,  0.00M vm
+                   incr: 0.000 sys,  0.540 user,  11.56M sys,  0.00M vm
+                   accu: 0.000 sys,  0.540 user,  11.56M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.540 user,  11.56M sys,  0.00M vm
 
-          Count usage: 50 var,  41 idcode,  41 callback
-                 incr: 50 var,  41 idcode,  41 callback
-                 accu: 50 var,  41 idcode,  41 callback
-            accu incr: 50 var,  41 idcode,  41 callback
-128 VC callback profile - scalar:0 vector:0
-129 Sat May 23 14:19:11 2020
-130 fsdbDumpvars: profile - 
-          CPU/Mem usage: 0.030 sys,  0.090 user,  187.20M sys,  0.00M vm
-                   incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
-                   accu: 0.000 sys,  0.010 user,  4.70M sys,  0.00M vm
-              accu incr: 0.000 sys,  0.000 user,  1.05M sys,  0.00M vm
+          Count usage: 43302 var,  11822 idcode,  11822 callback
+                 incr: 43302 var,  11822 idcode,  11822 callback
+                 accu: 43302 var,  11822 idcode,  11822 callback
+            accu incr: 43302 var,  11822 idcode,  11822 callback
+132 VC callback profile - scalar:0 vector:0
+133 Sat May 23 17:45:27 2020
+134 fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.060 sys,  0.640 user,  200.99M sys,  0.00M vm
+                   incr: 0.000 sys,  0.010 user,  1.05M sys,  0.00M vm
+                   accu: 0.000 sys,  0.550 user,  12.61M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.010 user,  1.05M sys,  0.00M vm
 
-          Count usage: 50 var,  41 idcode,  41 callback
+          Count usage: 43302 var,  11822 idcode,  11822 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 50 var,  41 idcode,  41 callback
+                 accu: 43302 var,  11822 idcode,  11822 callback
             accu incr: 0 var,  0 idcode,  0 callback
-131 VC callback profile - scalar:16 vector:25
-132 Sat May 23 14:19:11 2020
-133 sps_call_fsdbDumpMDA at 0 : /home/DICS/B10512133/CIC_partice/CIC_2018_univ/testfixture.v(81)
-134 *Verdi3* : Begin traversing the MDAs, layer (0).
-135 *Verdi3* : Enable +mda and +packedmda dumping.
-136 *Verdi3* : End of traversing the MDAs.
-137 fsdbDumpMDA traverse var: profile - 
-          CPU/Mem usage: 0.030 sys,  0.090 user,  187.38M sys,  0.00M vm
-                   incr: 0.000 sys,  0.000 user,  0.17M sys,  0.00M vm
-                   accu: 0.000 sys,  0.000 user,  0.17M sys,  0.00M vm
-              accu incr: 0.000 sys,  0.000 user,  0.17M sys,  0.00M vm
+135 VC callback profile - scalar:11812 vector:10
+136 Sat May 23 17:45:27 2020
+137 sps_call_fsdbDumpMDA at 0 : /home/DICS/B10512133/CIC_partice/CIC_2018_univ/testfixture.v(81)
+138 *Verdi3* : Begin traversing the MDAs, layer (0).
+139 *Verdi3* : Enable +mda and +packedmda dumping.
+140 Cell instance `test.LCD_CTRL.\r2549/U1_1_4 '.
+141 *Verdi3* : End of traversing the MDAs.
+142 fsdbDumpMDA traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.750 user,  200.99M sys,  0.00M vm
+                   incr: 0.000 sys,  0.110 user,  0.00M sys,  0.00M vm
+                   accu: 0.000 sys,  0.110 user,  0.00M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.110 user,  0.00M sys,  0.00M vm
 
-          Count usage: 352 var,  343 idcode,  343 callback
-                 incr: 302 var,  302 idcode,  302 callback
-                 accu: 302 var,  302 idcode,  302 callback
-            accu incr: 302 var,  302 idcode,  302 callback
-138 VC callback profile - scalar:16 vector:25
-139 Sat May 23 14:19:11 2020
-140 fsdbDumpMDA: profile - 
-          CPU/Mem usage: 0.030 sys,  0.100 user,  187.38M sys,  0.00M vm
+          Count usage: 43540 var,  12060 idcode,  12060 callback
+                 incr: 238 var,  238 idcode,  238 callback
+                 accu: 238 var,  238 idcode,  238 callback
+            accu incr: 238 var,  238 idcode,  238 callback
+143 VC callback profile - scalar:11812 vector:10
+144 Sat May 23 17:45:27 2020
+145 fsdbDumpMDA: profile - 
+          CPU/Mem usage: 0.060 sys,  0.760 user,  200.99M sys,  0.00M vm
                    incr: 0.000 sys,  0.010 user,  0.00M sys,  0.00M vm
-                   accu: 0.000 sys,  0.010 user,  0.17M sys,  0.00M vm
+                   accu: 0.000 sys,  0.120 user,  0.00M sys,  0.00M vm
               accu incr: 0.000 sys,  0.010 user,  0.00M sys,  0.00M vm
 
-          Count usage: 352 var,  343 idcode,  343 callback
+          Count usage: 43540 var,  12060 idcode,  12060 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 302 var,  302 idcode,  302 callback
+                 accu: 238 var,  238 idcode,  238 callback
             accu incr: 0 var,  0 idcode,  0 callback
-141 VC callback profile - scalar:16 vector:327
-142 Sat May 23 14:19:11 2020
-143 End of simulation at 133500
-144 VC callback profile - scalar:582 vector:1174
-145 Sat May 23 14:19:11 2020
-146 Parallel profile    -  Flush:2 ProduceWait:0 ConsumerWait:0 BlockUsed:0
-147 SimExit
-148 Sim process exit
+146 VC callback profile - scalar:11812 vector:248
+147 Sat May 23 17:45:27 2020
+148 End of simulation at 2236167
+149 VC callback profile - scalar:128604 vector:597
+150 Sat May 23 17:45:27 2020
+151 Parallel profile    -  Flush:2 ProduceWait:0 ConsumerWait:0 BlockUsed:0
+152 SimExit
+153 Sim process exit

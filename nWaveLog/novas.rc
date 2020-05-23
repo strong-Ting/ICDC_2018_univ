@@ -165,13 +165,13 @@ StickSet-TextColor = black
 Orientation = Landscape
 [FileBrowser]
 nWaveOpenFsdbDirHistory = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/LCD_CTRL.fsdb,/home/DICS/B10512133/CIC_partice/CIC_2018_univ,
-nWaveRestoreRCDirHistory = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/sig.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ/signal.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ,
+nWaveRestoreRCDirHistory = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/signal.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ/sig.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ,
 [Form]
 version = Verdi3_2013.07
-wave/saveSig.fm = 100,100,723,532
 wave/openWFile.fm = 100,100,823,696
 wave/restoreSig.fm = 100,100,723,532
 wave/getSignal.fm = 100,100,856,562
+wave/saveSig.fm = 100,100,723,532
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
@@ -240,6 +240,7 @@ PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
 [QtDialog]
 QwWarnMsgDlg = 650,375,600,250
+QwUserAskDlg = 470,284,324,136
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
