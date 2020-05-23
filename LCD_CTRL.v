@@ -181,7 +181,7 @@ end
 //
 
 //comparetor 
-always(P0 or P1 or P2 or P3) //max
+always@(P0 or P1 or P2 or P3) //max
 begin
 
     if(ImageBuffer[P0]>=ImageBuffer[P1] && ImageBuffer[P0]>=ImageBuffer[P2] && ImageBuffer[P0]>=ImageBuffer[P3]) cmpMax = P0; //Max = P0
