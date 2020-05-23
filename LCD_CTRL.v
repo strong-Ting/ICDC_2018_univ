@@ -153,7 +153,7 @@ begin
     begin
         if(state_cs == IDLE_CMD)
         begin
-            case(cmd):
+            case(cmd)
             4'd1: //shift_up
                 begin
                     if(P0 > 6'd7) P0 <= P0 - 6'd8;
@@ -221,7 +221,7 @@ begin
     end
     IDLE_CMD:
     begin
-        case(cmd):
+        case(cmd)
         4'd5: //max
             begin
                 ImageBuffer[P0] <= ImageBuffer[cmpMax];
@@ -275,7 +275,7 @@ begin
     end
     OP:
     begin
-       case 
+       
     end
     WRITE:
     begin
