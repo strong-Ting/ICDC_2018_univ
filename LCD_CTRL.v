@@ -206,7 +206,7 @@ end
 //sum
 always@(P0 or P1 or P2 or P3)
 begin
-    sum = P0 +P1+P2+P3;
+    sum = ImageBuffer[P0] + ImageBuffer[P1] + ImageBuffer[P2] + ImageBuffer[P3];
 end
 //
 
