@@ -16,7 +16,7 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 216869356.957825 216922310.042175
+zoom 69299.000000 134835.000000
 cursor 0.000000
 marker 0.000000
 
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 7
+markerPos 11
 
 ; event list
 ; addEvent event_name event_expression
@@ -54,6 +54,10 @@ addSignal -h 15 -holdScope IROM_rd
 addSignal -h 15 -holdScope ImageBuffer[63:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope state_cs[1:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope state_ns[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope IRAM_A[5:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope IRAM_D[7:0]
+addSignal -h 15 -holdScope IRAM_valid
+addSignal -h 15 -UNSIGNED -HEX -holdScope counter[5:0]
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status

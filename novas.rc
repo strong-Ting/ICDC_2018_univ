@@ -162,16 +162,16 @@ StickSet-LineWidth = 1
 StickSet-FillColor = purple6
 StickSet-TextColor = black
 [FSM_Dlg-Print]
-Orientation = Landscape    
+Orientation = Landscape 
 [FileBrowser]
 nWaveOpenFsdbDirHistory = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/LCD_CTRL.fsdb,/home/DICS/B10512133/CIC_partice/CIC_2018_univ,
-nWaveRestoreRCDirHistory = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/signal.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ,
+nWaveRestoreRCDirHistory = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/sig.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ/signal.rc,/home/DICS/B10512133/CIC_partice/CIC_2018_univ,
 [Form]
 version = Verdi3_2013.07
-wave/openWFile.fm = 100,100,823,696
-wave/getSignal.fm = 100,100,856,562
-wave/restoreSig.fm = 100,100,723,532
 wave/saveSig.fm = 100,100,723,532
+wave/openWFile.fm = 100,100,823,696
+wave/restoreSig.fm = 100,100,723,532
+wave/getSignal.fm = 100,100,856,562
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
@@ -651,7 +651,8 @@ curveWindow_Drag&Drop_Mode = TRUE
 hspiceIncOpenMode = TRUE
 pcSelectMode = TRUE
 hierarchyDelimiter = /
-RecentFile1 = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/LCD_CTRL.fsdb
+RecentFile1 = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/sig.rc
+RecentFile2 = /home/DICS/B10512133/CIC_partice/CIC_2018_univ/LCD_CTRL.fsdb
 open_file_time_range = FALSE
 value_window_aligment = Right
 signal_window_alignment = Auto
@@ -762,7 +763,7 @@ AddImportArgument = TRUE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -tcl
 [turboSchema_Printer_Options]
-Orientation = Landscape    
+Orientation = Landscape 
 [turbo_library]
 bdb_load_scope = 
 [verisity]

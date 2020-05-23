@@ -1,11 +1,11 @@
 csi-ncsim - CSI: Command line:
 ncsim
-    -f /home/DICS/B10512133/CIC_partice/CIC_2018_univ/INCA_libs/irun.lnx86.11.10.nc/DICS59_19537/ncsim.args
+    -f /home/DICS/B10512133/CIC_partice/CIC_2018_univ/INCA_libs/irun.lnx86.11.10.nc/DICS59_18029/ncsim.args
         +define+tb1
         +access+r
         -MESSAGES
         +EMGRLOG ncverilog.log
-        -XLSTIME 1589946415
+        -XLSTIME 1590214506
         -XLKEEP
         -XLMODE ./INCA_libs/irun.lnx86.11.10.nc
         -RUNMODE
@@ -13,16 +13,16 @@ ncsim
         -HDLVAR ./INCA_libs/irun.lnx86.11.10.nc/hdl.var
         -XLNAME ncverilog
         -XLVERSION TOOL:	ncverilog	11.10-s072
-        -XLNAME ./INCA_libs/irun.lnx86.11.10.nc/DICS59_19537
+        -XLNAME ./INCA_libs/irun.lnx86.11.10.nc/DICS59_18029
     -CHECK_VERSION TOOL:	ncverilog	11.10-s072
     -LOG_FD 4
     -LOG_FD_NAME ncverilog.log
     -cmdnopsim
     -runlock /home/DICS/B10512133/CIC_partice/CIC_2018_univ/INCA_libs/irun.lnx86.11.10.nc/.nclib.lock
-    -runscratch /home/DICS/B10512133/CIC_partice/CIC_2018_univ/INCA_libs/irun.lnx86.11.10.nc/DICS59_19537
+    -runscratch /home/DICS/B10512133/CIC_partice/CIC_2018_univ/INCA_libs/irun.lnx86.11.10.nc/DICS59_18029
 
 csi-ncsim - CSI: *F,INTERR: INTERNAL EXCEPTION
-Observed simulation time : 100484040 NS + 0
+Observed simulation time : 247347945 NS + 0
 -----------------------------------------------------------------
 The tool has encountered an unexpected condition and must exit.
 Contact Cadence Design Systems customer support about this

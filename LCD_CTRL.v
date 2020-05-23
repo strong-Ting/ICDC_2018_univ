@@ -126,13 +126,21 @@ end
 //IRAM_A counter
 always@(posedge clk)
 begin
-    if(reset == 1'd1) IRAM_A <= 6'd0;
+    if(reset == 1'd1) counter <= 6'd0;
     else if(IRAM_valid == 1'd1)
     begin
-        if(IRAM_A == 6'd63) IRAM_A <= IRAM_A;
-        else IRAM_A <= IRAM_A +6'd1;
+        if(counter == 6'd63) counter <= counter;
+        else counter <= counter +6'd1;
     end
 end
+//
+
+//IRAM_A delay 1 clk
+always@(posedge clk)
+begin
+    IRAM_A <= counter;
+end
+//
 
 
 //output logic
@@ -153,7 +161,7 @@ begin
     end
     WRITE:
     begin
-        if(IRAM_valid == 1'd1) IRAM_D <= ImageBuffer[IRAM_A];
+        if(IRAM_valid == 1'd1) IRAM_D <= ImageBuffer[counter];
     end
     endcase
 end
