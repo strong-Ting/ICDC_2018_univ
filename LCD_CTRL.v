@@ -259,17 +259,17 @@ begin
             end
         4'd10: //mirror X
             begin
-                ImageBuffer[P0] <= ImageBuffer[P1];
-                ImageBuffer[P1] <= ImageBuffer[P0];
-                ImageBuffer[P2] <= ImageBuffer[P3];
-                ImageBuffer[P3] <= ImageBuffer[P2];
-            end
-        4'd11: //mirror y
-            begin
                 ImageBuffer[P0] <= ImageBuffer[P2];
                 ImageBuffer[P1] <= ImageBuffer[P3];
                 ImageBuffer[P2] <= ImageBuffer[P0];
                 ImageBuffer[P3] <= ImageBuffer[P1];
+            end
+        4'd11: //mirror y
+            begin
+                ImageBuffer[P0] <= ImageBuffer[P1];
+                ImageBuffer[P1] <= ImageBuffer[P0];
+                ImageBuffer[P2] <= ImageBuffer[P3];
+                ImageBuffer[P3] <= ImageBuffer[P2];
             end
         endcase    
     end
