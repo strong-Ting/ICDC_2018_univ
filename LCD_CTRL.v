@@ -35,6 +35,8 @@ reg [7:0] IRAM_D;
 reg [5:0] IRAM_A;
 reg busy;
 reg done;
+reg [5:0] cmpMax,cmpMin;
+reg [9:0]sum;
 //
 
 //state switch
@@ -62,8 +64,9 @@ begin
     end
     OP:
     begin
-        if(OP_sig) state_ns = IDLE_CMD;
-        else state_ns = OP; 
+       // if(OP_sig) state_ns = IDLE_CMD;
+       // else state_ns = OP;
+       state_ns = IDLE_CMD; 
     end
     WRITE:
     begin
@@ -142,6 +145,71 @@ begin
 end
 //
 
+//point move
+always@(posedge clk)
+begin
+    if(reset == 1'd1) P0 <= 6'h1b; //6'd27
+    else 
+    begin
+        if(state_cs == IDLE_CMD)
+        begin
+            case(cmd):
+            4'd1: //shift_up
+                begin
+                    if(P0 > 6'd7) P0 <= P0 - 6'd8;
+                    else P0 <= P0;
+                end
+            4'd2: //shift_down
+                begin
+                    if(P0<6'h30) P0 <= P0 +6'd8;
+                    else P0 <= P0;
+                end
+            4'd3: //shift_left
+                begin
+                    if(P0 == 6'h0 || P0 == 6'h8 || P0 == 6'h10 || P0 == 6'h18 || P0 == 6'h20 || P0 == 6'h28 || P0 == 6'h30 || P0 == 6'h38) P0 <= P0;
+                    else P0 <= P0 - 6'd1; 
+                end
+            4'd4: //shift_right
+                begin
+                    if(P0 == 6'h7 || P0 == 6'hf || P0 == 6'h17 || P0 == 6'h1f || P0 == 6'h27 || P0 == 6'h2f || P0 == 6'h37 || P0 == 6'h3f) P0 <= P0;
+                    else P0 <= P0 +6'd1;
+                end
+            endcase
+        end
+    end
+end
+//
+
+//comparetor 
+always(P0 or P1 or P2 or P3) //max
+begin
+
+    if(ImageBuffer[P0]>=ImageBuffer[P1] && ImageBuffer[P0]>=ImageBuffer[P2] && ImageBuffer[P0]>=ImageBuffer[P3]) cmpMax = P0; //Max = P0
+    else if(ImageBuffer[P1]>=ImageBuffer[P0] && ImageBuffer[P1]>=ImageBuffer[P2] && ImageBuffer[P1]>=ImageBuffer[P3]) cmpMax = P1;
+    else if(ImageBuffer[P2]>=ImageBuffer[P0] && ImageBuffer[P2]>=ImageBuffer[P1] && ImageBuffer[P2]>=ImageBuffer[P3]) cmpMax = P2;
+    else cmpMax = P3;
+    
+   
+end
+
+always@(P0 or P1 or P2 or P3) //min
+begin
+
+    if(ImageBuffer[P0]<=ImageBuffer[P1] && ImageBuffer[P0]<=ImageBuffer[P2] && ImageBuffer[P0]<=ImageBuffer[P3]) cmpMin = P0; //Max = P0
+    else if(ImageBuffer[P1]<=ImageBuffer[P0] && ImageBuffer[P1]<=ImageBuffer[P2] && ImageBuffer[P1]<=ImageBuffer[P3]) cmpMin = P1;
+    else if(ImageBuffer[P2]<=ImageBuffer[P0] && ImageBuffer[P2]<=ImageBuffer[P1] && ImageBuffer[P2]<=ImageBuffer[P3]) cmpMin = P2;
+    else cmpMin = P3;
+
+end
+//
+
+//sum
+always@(P0 or P1 or P2 or P3)
+begin
+    sum = P0 +P1+P2+P3;
+end
+//
+
 
 //output logic
 always@(posedge clk)
@@ -153,11 +221,61 @@ begin
     end
     IDLE_CMD:
     begin
-        
+        case(cmd):
+        4'd5: //max
+            begin
+                ImageBuffer[P0] <= ImageBuffer[cmpMax];
+                ImageBuffer[P1] <= ImageBuffer[cmpMax];
+                ImageBuffer[P2] <= ImageBuffer[cmpMax];
+                ImageBuffer[P3] <= ImageBuffer[cmpMax];
+            end
+        4'd6: //min
+            begin
+                ImageBuffer[P0] <= ImageBuffer[cmpMin];
+                ImageBuffer[P1] <= ImageBuffer[cmpMin];
+                ImageBuffer[P2] <= ImageBuffer[cmpMin];
+                ImageBuffer[P3] <= ImageBuffer[cmpMin];
+            end
+        4'd7: //average
+            begin
+                ImageBuffer[P0] <= sum[9:2];
+                ImageBuffer[P1] <= sum[9:2];
+                ImageBuffer[P2] <= sum[9:2];
+                ImageBuffer[P3] <= sum[9:2];
+            end
+        4'd8: //Counterclockwise Rotation
+            begin
+                ImageBuffer[P0] <= ImageBuffer[P1];
+                ImageBuffer[P1] <= ImageBuffer[P3];
+                ImageBuffer[P2] <= ImageBuffer[P0];
+                ImageBuffer[P3] <= ImageBuffer[P2];
+            end
+        4'd9: //Clockwise Rotation
+            begin
+                ImageBuffer[P0] <= ImageBuffer[P2];
+                ImageBuffer[P1] <= ImageBuffer[P0];
+                ImageBuffer[P2] <= ImageBuffer[P3];
+                ImageBuffer[P3] <= ImageBuffer[P1];
+            end
+        4'd10: //mirror X
+            begin
+                ImageBuffer[P0] <= ImageBuffer[P1];
+                ImageBuffer[P1] <= ImageBuffer[P0];
+                ImageBuffer[P2] <= ImageBuffer[P3];
+                ImageBuffer[P3] <= ImageBuffer[P2];
+            end
+        4'd11: //mirror y
+            begin
+                ImageBuffer[P0] <= ImageBuffer[P2];
+                ImageBuffer[P1] <= ImageBuffer[P3];
+                ImageBuffer[P2] <= ImageBuffer[P0];
+                ImageBuffer[P3] <= ImageBuffer[P1];
+            end
+        endcase    
     end
     OP:
     begin
-        
+       case 
     end
     WRITE:
     begin
