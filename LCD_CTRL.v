@@ -26,7 +26,7 @@ reg [7:0] ImageBuffer[63:0];
 reg [5:0]P0;
 wire [5:0]P1,P2,P3;
 reg [5:0] counter;
-reg OP_sig;
+
 
 reg IROM_rd;
 reg [5:0] IROM_A;
@@ -64,9 +64,7 @@ begin
     end
     OP:
     begin
-       // if(OP_sig) state_ns = IDLE_CMD;
-       // else state_ns = OP;
-       state_ns = IDLE_CMD; 
+        state_ns = IDLE_CMD; 
     end
     WRITE:
     begin
@@ -171,7 +169,7 @@ begin
                 end
             4'd4: //shift_right
                 begin
-                    if(P0 == 6'h7 || P0 == 6'hf || P0 == 6'h17 || P0 == 6'h1f || P0 == 6'h27 || P0 == 6'h2f || P0 == 6'h37 || P0 == 6'h3f) P0 <= P0;
+                    if(P0 == 6'h6 || P0 == 6'he || P0 == 6'h16 || P0 == 6'h1e || P0 == 6'h26 || P0 == 6'h2e || P0 == 6'h36 || P0 == 6'h3e) P0 <= P0;
                     else P0 <= P0 +6'd1;
                 end
             endcase
@@ -181,7 +179,7 @@ end
 //
 
 //comparetor 
-always@(P0 or P1 or P2 or P3) //max
+always@(*) //max
 begin
 
     if(ImageBuffer[P0]>=ImageBuffer[P1] && ImageBuffer[P0]>=ImageBuffer[P2] && ImageBuffer[P0]>=ImageBuffer[P3]) cmpMax = P0; //Max = P0
@@ -192,7 +190,7 @@ begin
    
 end
 
-always@(P0 or P1 or P2 or P3) //min
+always@(*) //min
 begin
 
     if(ImageBuffer[P0]<=ImageBuffer[P1] && ImageBuffer[P0]<=ImageBuffer[P2] && ImageBuffer[P0]<=ImageBuffer[P3]) cmpMin = P0; //Max = P0
@@ -204,7 +202,7 @@ end
 //
 
 //sum
-always@(P0 or P1 or P2 or P3)
+always@(*)
 begin
     sum = ImageBuffer[P0] + ImageBuffer[P1] + ImageBuffer[P2] + ImageBuffer[P3];
 end
