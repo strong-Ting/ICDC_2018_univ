@@ -129,7 +129,7 @@ begin
     if(reset == 1'd1) IRAM_A <= 6'd0;
     else if(IRAM_valid == 1'd1)
     begin
-        if(IRAM_valid == 6'd63) IRAM_valid <= 6'd0;
+        if(IRAM_A == 6'd63) IRAM_A <= IRAM_A;
         else IRAM_A <= IRAM_A +6'd1;
     end
 end
@@ -159,6 +159,13 @@ begin
 end
 //
 
+//singal done
+always @(posedge clk) 
+begin
+    if(IRAM_A == 6'd63) done<=1'd1;
+    else done <= 1'd0;    
+end
+//
 
 
 
