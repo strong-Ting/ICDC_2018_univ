@@ -5,6 +5,6 @@
 -VFILE
 tsmc13_neg.v
 -DEFINE
-SDF
--DEFINE
 tb3
+-DEFINE
+SDF

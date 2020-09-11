@@ -1,0 +1,6 @@
+{
+    "verilog-format.path": "C:\\Users\\lin\\Downloads\\verilog-format-WIN\\verilog-format.exe",
+    "verilog.icarusPersistentBuild": true,
+    "verilog.icarusCompileArguments": "-D tb3",
+    "verilog.linting.linter": "iverilog"
+}

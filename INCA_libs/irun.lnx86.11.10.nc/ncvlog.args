@@ -10,9 +10,9 @@ LCD_CTRL_syn.v
 -VFILE
 tsmc13_neg.v
 -DEFINE
-SDF
--DEFINE
 tb3
+-DEFINE
+SDF
 -CDSLIB
 ./INCA_libs/irun.lnx86.11.10.nc/cdsrun.lib
 -HDLVAR

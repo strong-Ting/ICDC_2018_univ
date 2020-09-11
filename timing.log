@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : LCD_CTRL
 Version: H-2013.03-SP5
-Date   : Sat May 23 17:34:55 2020
+Date   : Sun Sep  6 14:48:36 2020
 ****************************************
 
 Operating Conditions: slow   Library: slow

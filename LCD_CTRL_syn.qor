@@ -3,7 +3,7 @@
 Report : qor
 Design : LCD_CTRL
 Version: H-2013.03-SP5
-Date   : Sat May 23 17:34:55 2020
+Date   : Sun Sep  6 14:48:36 2020
 ****************************************
 
 
@@ -59,16 +59,16 @@ Date   : Sat May 23 17:34:55 2020
   -----------------------------------
 
 
-  Hostname: DICS59
+  Hostname: DICS60
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    0.34
-  Logic Optimization:                  0.21
-  Mapping Optimization:                1.35
+  Resource Sharing:                    0.21
+  Logic Optimization:                  0.13
+  Mapping Optimization:                0.84
   -----------------------------------------
-  Overall Compile Time:                4.79
-  Overall Compile Wall Clock Time:    94.39
+  Overall Compile Time:                2.96
+  Overall Compile Wall Clock Time:    60.11
 
   --------------------------------------------------------------------
 

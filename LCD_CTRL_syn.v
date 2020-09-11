@@ -283,16 +283,16 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
          N13067, N13068, N13069, N13070, N13071, N13653, n3321, n3322, n3323,
          n3324, n3325, n3326, n3327, n3328, n3329, n3330, n3331, n3332, n3333,
          n3334, n3335, n3336, n3337, n3338, N2740, N2739, N2738, N2737, N2736,
-         N2735, N2734, N2733, N2732, \sub_168_aco/carry[5] ,
-         \sub_168_aco/carry[4] , \sub_168_aco/carry[3] ,
-         \sub_168_aco/carry[2] , \sub_168_aco/carry[1] , \sub_168_aco/B[0] ,
-         \add_162_S2_aco/carry[5] , \add_162_S2_aco/carry[4] ,
-         \sub_157_S2_aco/carry[5] , \sub_157_S2_aco/carry[4] ,
-         \add_134/carry[5] , \add_134/carry[4] , \add_134/carry[3] ,
-         \add_134/carry[2] , \add_122/carry[5] , \add_122/carry[4] ,
-         \add_122/carry[3] , \add_122/carry[2] , \add_80/carry[2] ,
-         \add_80/carry[3] , \add_80/carry[4] , \add_80/carry[5] ,
-         \add_79/carry[5] , \r2549/carry[5] , \r2549/carry[4] ,
+         N2735, N2734, N2733, N2732, \sub_179_aco/carry[5] ,
+         \sub_179_aco/carry[4] , \sub_179_aco/carry[3] ,
+         \sub_179_aco/carry[2] , \sub_179_aco/carry[1] , \sub_179_aco/B[0] ,
+         \add_173_S2_aco/carry[5] , \add_173_S2_aco/carry[4] ,
+         \sub_168_S2_aco/carry[5] , \sub_168_S2_aco/carry[4] ,
+         \add_145/carry[5] , \add_145/carry[4] , \add_145/carry[3] ,
+         \add_145/carry[2] , \add_133/carry[5] , \add_133/carry[4] ,
+         \add_133/carry[3] , \add_133/carry[2] , \add_91/carry[2] ,
+         \add_91/carry[3] , \add_91/carry[4] , \add_91/carry[5] ,
+         \add_90/carry[5] , \r2549/carry[5] , \r2549/carry[4] ,
          \r2549/carry[3] , \r2549/carry[2] , n3339, n3340, n3341, n3342, n3343,
          n3344, n3345, n3346, n3347, n3348, n3349, n3350, n3351, n3352, n3353,
          n3354, n3355, n3356, n3357, n3358, n3359, n3360, n3361, n3362, n3363,
@@ -3231,7 +3231,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   INVX12 U4250 ( .A(n8020), .Y(n7187) );
   MX4X1 U4251 ( .A(n4047), .B(n4037), .C(n4042), .D(n4032), .S0(N2498), .S1(
         N2497), .Y(n3946) );
-  CLKXOR2X8 U4252 ( .A(n4947), .B(\add_79/carry[5] ), .Y(N2498) );
+  CLKXOR2X8 U4252 ( .A(n4947), .B(\add_90/carry[5] ), .Y(N2498) );
   MX4XL U4253 ( .A(\ImageBuffer[0][3] ), .B(\ImageBuffer[1][3] ), .C(
         \ImageBuffer[2][3] ), .D(\ImageBuffer[3][3] ), .S0(n3486), .S1(n4306), 
         .Y(n4215) );
@@ -3569,7 +3569,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   NAND2BX2 U4561 ( .AN(n5396), .B(n5378), .Y(n5391) );
   OAI31X4 U4562 ( .A0(n5397), .A1(n5396), .A2(n5395), .B0(n5394), .Y(N2708) );
   NOR2X1 U4563 ( .A(n5097), .B(N2767), .Y(n5396) );
-  BUFX6 U4564 ( .A(\add_80/carry[2] ), .Y(n3470) );
+  BUFX6 U4564 ( .A(\add_91/carry[2] ), .Y(n3470) );
   CLKINVX12 U4565 ( .A(n3504), .Y(n3474) );
   OAI221X4 U4566 ( .A0(n5117), .A1(n8076), .B0(n3491), .B1(n8077), .C0(n8084), 
         .Y(N2506) );
@@ -3668,8 +3668,8 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   MX4X2 U4639 ( .A(n4527), .B(n4525), .C(n4526), .D(n4524), .S0(n3496), .S1(
         n4639), .Y(n4528) );
   BUFX8 U4640 ( .A(n4641), .Y(n4639) );
-  XNOR2X2 U4641 ( .A(\add_80/carry[3] ), .B(n5127), .Y(N2502) );
-  XNOR2X2 U4642 ( .A(\add_80/carry[3] ), .B(n5127), .Y(n3493) );
+  XNOR2X2 U4641 ( .A(\add_91/carry[3] ), .B(n5127), .Y(N2502) );
+  XNOR2X2 U4642 ( .A(\add_91/carry[3] ), .B(n5127), .Y(n3493) );
   INVX8 U4643 ( .A(N2502), .Y(n5110) );
   BUFX20 U4644 ( .A(n5110), .Y(n5109) );
   OAI31X1 U4645 ( .A0(n5307), .A1(n5306), .A2(n5305), .B0(n5304), .Y(N2703) );
@@ -3678,8 +3678,8 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   OAI21X4 U4648 ( .A0(n5120), .A1(n3348), .B0(n8071), .Y(n3545) );
   CLKINVX2 U4649 ( .A(n3479), .Y(n3480) );
   BUFX20 U4650 ( .A(n3941), .Y(n3486) );
-  OR2X1 U4651 ( .A(n5127), .B(\add_80/carry[3] ), .Y(\add_80/carry[4] ) );
-  AND2X6 U4652 ( .A(n3470), .B(N2495), .Y(\add_80/carry[3] ) );
+  OR2X1 U4651 ( .A(n5127), .B(\add_91/carry[3] ), .Y(\add_91/carry[4] ) );
+  AND2X6 U4652 ( .A(n3470), .B(N2495), .Y(\add_91/carry[3] ) );
   NAND2X1 U4653 ( .A(N2786), .B(n5186), .Y(n5176) );
   NOR2BX2 U4654 ( .AN(n5091), .B(n4870), .Y(n5357) );
   MX4XL U4655 ( .A(\ImageBuffer[28][4] ), .B(\ImageBuffer[29][4] ), .C(
@@ -4050,7 +4050,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
          );
   AOI211XL U4912 ( .A0(n7183), .A1(n7295), .B0(n7296), .C0(n7297), .Y(n7294)
          );
-  INVX3 U4913 ( .A(\sub_168_aco/B[0] ), .Y(n7295) );
+  INVX3 U4913 ( .A(\sub_179_aco/B[0] ), .Y(n7295) );
   MXI2XL U4914 ( .A(n5401), .B(n5402), .S0(\state_cs[0] ), .Y(n5399) );
   NOR3X2 U4915 ( .A(n5401), .B(reset), .C(n4945), .Y(n8036) );
   NOR3BX1 U4916 ( .AN(n7924), .B(n7207), .C(n7968), .Y(n5401) );
@@ -4270,7 +4270,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   INVX3 U5063 ( .A(n5289), .Y(N2675) );
   NOR2BX1 U5064 ( .AN(N2765), .B(n5074), .Y(n5261) );
   CLKMX2X6 U5065 ( .A(n8085), .B(n8079), .S0(n5118), .Y(n3571) );
-  NOR2BX1 U5066 ( .AN(n5118), .B(n5117), .Y(\add_80/carry[2] ) );
+  NOR2BX1 U5066 ( .AN(n5118), .B(n5117), .Y(\add_91/carry[2] ) );
   MX4XL U5067 ( .A(\ImageBuffer[4][5] ), .B(\ImageBuffer[5][5] ), .C(
         \ImageBuffer[6][5] ), .D(\ImageBuffer[7][5] ), .S0(n4300), .S1(n3926), 
         .Y(n3877) );
@@ -4295,7 +4295,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   NOR2BX1 U5085 ( .AN(N2781), .B(n5074), .Y(n5170) );
   NAND2X2 U5086 ( .A(N2755), .B(n5988), .Y(n3544) );
   CLKINVX4 U5087 ( .A(n3967), .Y(n3553) );
-  AND2X2 U5088 ( .A(\add_80/carry[4] ), .B(n5125), .Y(\add_80/carry[5] ) );
+  AND2X2 U5088 ( .A(\add_91/carry[4] ), .B(n5125), .Y(\add_91/carry[5] ) );
   INVX12 U5089 ( .A(n3552), .Y(N2779) );
   CLKINVX8 U5090 ( .A(n3943), .Y(n5080) );
   MX4X4 U5091 ( .A(n3986), .B(n3984), .C(n3985), .D(n3983), .S0(n4108), .S1(
@@ -4482,8 +4482,8 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   MX4X1 U5257 ( .A(n3848), .B(n3846), .C(n3847), .D(n3845), .S0(n3933), .S1(
         n3409), .Y(n3849) );
   AO22X1 U5258 ( .A0(N2632), .A1(n3476), .B0(N2495), .B1(n3477), .Y(n8049) );
-  XNOR2XL U5259 ( .A(\sub_168_aco/carry[2] ), .B(N2495), .Y(N2632) );
-  XOR2XL U5260 ( .A(n5125), .B(\add_162_S2_aco/carry[4] ), .Y(N2624) );
+  XNOR2XL U5259 ( .A(\sub_179_aco/carry[2] ), .B(N2495), .Y(N2632) );
+  XOR2XL U5260 ( .A(n5125), .B(\add_173_S2_aco/carry[4] ), .Y(N2624) );
   AO22XL U5261 ( .A0(n8037), .A1(n5104), .B0(N2570), .B1(n8038), .Y(n3329) );
   AO22XL U5262 ( .A0(n8037), .A1(N2519), .B0(N2569), .B1(n8038), .Y(n3330) );
   AO22XL U5263 ( .A0(n8037), .A1(n5105), .B0(N2568), .B1(n8038), .Y(n3331) );
@@ -4516,7 +4516,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
         n4136), .Y(n4052) );
   AO22XL U5279 ( .A0(n8037), .A1(N2522), .B0(N2572), .B1(n8038), .Y(n3327) );
   AO22XL U5280 ( .A0(n8037), .A1(N2521), .B0(N2571), .B1(n8038), .Y(n3328) );
-  XOR2XL U5281 ( .A(\add_122/carry[5] ), .B(IROM_A[5]), .Y(N2549) );
+  XOR2XL U5281 ( .A(\add_133/carry[5] ), .B(IROM_A[5]), .Y(N2549) );
   NAND2X8 U5282 ( .A(n8086), .B(n8087), .Y(n8077) );
   INVXL U5283 ( .A(n7556), .Y(n7554) );
   INVXL U5284 ( .A(n7530), .Y(n7527) );
@@ -4670,10 +4670,10 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   NAND2X1 U5389 ( .A(n7922), .B(n5115), .Y(n3560) );
   CLKBUFX2 U5390 ( .A(n5121), .Y(n5120) );
   NOR2XL U5391 ( .A(n5400), .B(n8061), .Y(N2541) );
-  OR2XL U5392 ( .A(n5125), .B(\sub_168_aco/carry[4] ), .Y(
-        \sub_168_aco/carry[5] ) );
-  OR2XL U5393 ( .A(n5125), .B(\sub_157_S2_aco/carry[4] ), .Y(
-        \sub_157_S2_aco/carry[5] ) );
+  OR2XL U5392 ( .A(n5125), .B(\sub_179_aco/carry[4] ), .Y(
+        \sub_179_aco/carry[5] ) );
+  OR2XL U5393 ( .A(n5125), .B(\sub_168_S2_aco/carry[4] ), .Y(
+        \sub_168_S2_aco/carry[5] ) );
   CLKINVX1 U5394 ( .A(n5107), .Y(n5106) );
   MXI2XL U5395 ( .A(\ImageBuffer[30][4] ), .B(n4988), .S0(n4910), .Y(n6491) );
   MXI2XL U5396 ( .A(\ImageBuffer[33][4] ), .B(n4987), .S0(n4906), .Y(n6482) );
@@ -5766,7 +5766,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   CLKBUFX3 U6129 ( .A(n4810), .Y(n4817) );
   OAI2BB2X2 U6130 ( .B0(n7180), .B1(n3344), .A0N(n5401), .A1N(N2538), .Y(n5411) );
   CLKXOR2X4 U6131 ( .A(n5125), .B(n5127), .Y(N2497) );
-  CLKXOR2X4 U6132 ( .A(n5125), .B(\add_80/carry[4] ), .Y(N2503) );
+  CLKXOR2X4 U6132 ( .A(n5125), .B(\add_91/carry[4] ), .Y(N2503) );
   AOI211X1 U6133 ( .A0(n5150), .A1(n5149), .B0(n5148), .C0(n5147), .Y(n5152)
          );
   CLKBUFX3 U6134 ( .A(n5080), .Y(n5078) );
@@ -5996,7 +5996,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   OAI22XL U6332 ( .A0(n7315), .A1(n7518), .B0(n7519), .B1(n3344), .Y(n5630) );
   CLKBUFX3 U6333 ( .A(n5558), .Y(n4891) );
   OAI22XL U6334 ( .A0(n7315), .A1(n7416), .B0(n7417), .B1(n3344), .Y(n5558) );
-  AND2X2 U6335 ( .A(n5127), .B(n5125), .Y(\add_79/carry[5] ) );
+  AND2X2 U6335 ( .A(n5127), .B(n5125), .Y(\add_90/carry[5] ) );
   MX4X1 U6336 ( .A(n4036), .B(n4034), .C(n4035), .D(n4033), .S0(n4108), .S1(
         n4135), .Y(n4037) );
   CLKINVX1 U6337 ( .A(n3948), .Y(n5098) );
@@ -6028,11 +6028,11 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   CLKBUFX3 U6353 ( .A(n7202), .Y(n4881) );
   BUFX16 U6354 ( .A(N2541), .Y(IRAM_valid) );
   CLKBUFX3 U6355 ( .A(n7179), .Y(n5041) );
-  ADDHXL U6356 ( .A(N2519), .B(\add_134/carry[2] ), .CO(\add_134/carry[3] ), 
+  ADDHXL U6356 ( .A(N2519), .B(\add_145/carry[2] ), .CO(\add_145/carry[3] ), 
         .S(N2569) );
-  ADDHXL U6357 ( .A(n5104), .B(\add_134/carry[3] ), .CO(\add_134/carry[4] ), 
+  ADDHXL U6357 ( .A(n5104), .B(\add_145/carry[3] ), .CO(\add_145/carry[4] ), 
         .S(N2570) );
-  ADDHXL U6358 ( .A(n5105), .B(n5106), .CO(\add_134/carry[2] ), .S(N2568) );
+  ADDHXL U6358 ( .A(n5105), .B(n5106), .CO(\add_145/carry[2] ), .S(N2568) );
   CLKINVX1 U6359 ( .A(n4859), .Y(n7955) );
   CLKINVX1 U6360 ( .A(n4856), .Y(n7925) );
   CLKINVX1 U6361 ( .A(n4850), .Y(n7885) );
@@ -7342,11 +7342,11 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   MX4X1 U6996 ( .A(\ImageBuffer[20][7] ), .B(\ImageBuffer[21][7] ), .C(
         \ImageBuffer[22][7] ), .D(\ImageBuffer[23][7] ), .S0(n3938), .S1(n3930), .Y(n3912) );
   INVX3 U6997 ( .A(reset), .Y(n8602) );
-  ADDHXL U6998 ( .A(n8621), .B(n8622), .CO(\add_122/carry[2] ), .S(N2545) );
-  ADDHXL U6999 ( .A(IROM_A[3]), .B(\add_122/carry[3] ), .CO(\add_122/carry[4] ), .S(N2547) );
-  ADDHXL U7000 ( .A(n8620), .B(\add_122/carry[2] ), .CO(\add_122/carry[3] ), 
+  ADDHXL U6998 ( .A(n8621), .B(n8622), .CO(\add_133/carry[2] ), .S(N2545) );
+  ADDHXL U6999 ( .A(IROM_A[3]), .B(\add_133/carry[3] ), .CO(\add_133/carry[4] ), .S(N2547) );
+  ADDHXL U7000 ( .A(n8620), .B(\add_133/carry[2] ), .CO(\add_133/carry[3] ), 
         .S(N2546) );
-  ADDHXL U7001 ( .A(IROM_A[4]), .B(\add_122/carry[4] ), .CO(\add_122/carry[5] ), .S(N2548) );
+  ADDHXL U7001 ( .A(IROM_A[4]), .B(\add_133/carry[4] ), .CO(\add_133/carry[5] ), .S(N2548) );
   MX4X1 U7002 ( .A(n4655), .B(n4653), .C(n4654), .D(n4652), .S0(N2520), .S1(
         n4819), .Y(n4656) );
   MX4X1 U7003 ( .A(n4675), .B(n4673), .C(n4674), .D(n4672), .S0(n4820), .S1(
@@ -7429,7 +7429,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
         n4819), .Y(n4786) );
   CLKBUFX3 U7042 ( .A(N2518), .Y(n5105) );
   CLKBUFX3 U7043 ( .A(N2520), .Y(n5104) );
-  ADDHXL U7044 ( .A(N2521), .B(\add_134/carry[4] ), .CO(\add_134/carry[5] ), 
+  ADDHXL U7044 ( .A(N2521), .B(\add_145/carry[4] ), .CO(\add_145/carry[5] ), 
         .S(N2571) );
   MX4X2 U7045 ( .A(n3763), .B(n3761), .C(n3762), .D(n3760), .S0(n3934), .S1(
         n3409), .Y(n3764) );
@@ -7606,29 +7606,29 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   OAI221X4 U7147 ( .A0(n7717), .A1(n8076), .B0(n7311), .B1(n8077), .C0(n8078), 
         .Y(N2510) );
   NOR3BX2 U7148 ( .AN(n5212), .B(n5211), .C(n5196), .Y(n5197) );
-  CLKXOR2X8 U7149 ( .A(n4947), .B(\add_80/carry[5] ), .Y(N2504) );
-  XNOR2X1 U7150 ( .A(n4947), .B(\sub_157_S2_aco/carry[5] ), .Y(N2615) );
-  XNOR2X1 U7151 ( .A(\sub_157_S2_aco/carry[4] ), .B(n5125), .Y(N2614) );
-  OR2X1 U7152 ( .A(n3371), .B(n5127), .Y(\sub_157_S2_aco/carry[4] ) );
+  CLKXOR2X8 U7149 ( .A(n4947), .B(\add_91/carry[5] ), .Y(N2504) );
+  XNOR2X1 U7150 ( .A(n4947), .B(\sub_168_S2_aco/carry[5] ), .Y(N2615) );
+  XNOR2X1 U7151 ( .A(\sub_168_S2_aco/carry[4] ), .B(n5125), .Y(N2614) );
+  OR2X1 U7152 ( .A(n3371), .B(n5127), .Y(\sub_168_S2_aco/carry[4] ) );
   XNOR2X1 U7153 ( .A(n5127), .B(n3371), .Y(N2613) );
-  XNOR2X1 U7154 ( .A(n4947), .B(\sub_168_aco/carry[5] ), .Y(N2635) );
-  XNOR2X1 U7155 ( .A(\sub_168_aco/carry[4] ), .B(n5125), .Y(N2634) );
-  OR2X1 U7156 ( .A(n5127), .B(\sub_168_aco/carry[3] ), .Y(
-        \sub_168_aco/carry[4] ) );
-  XNOR2X1 U7157 ( .A(\sub_168_aco/carry[3] ), .B(n5127), .Y(N2633) );
-  OR2X1 U7158 ( .A(N2495), .B(\sub_168_aco/carry[2] ), .Y(
-        \sub_168_aco/carry[3] ) );
-  OR2X1 U7159 ( .A(n4134), .B(\sub_168_aco/carry[1] ), .Y(
-        \sub_168_aco/carry[2] ) );
-  XNOR2X1 U7160 ( .A(\sub_168_aco/carry[1] ), .B(n4123), .Y(N2631) );
-  XOR2X1 U7161 ( .A(n4947), .B(\add_162_S2_aco/carry[5] ), .Y(N2625) );
-  AND2X1 U7162 ( .A(\add_162_S2_aco/carry[4] ), .B(n5125), .Y(
-        \add_162_S2_aco/carry[5] ) );
-  AND2X1 U7163 ( .A(n5127), .B(N2617), .Y(\add_162_S2_aco/carry[4] ) );
+  XNOR2X1 U7154 ( .A(n4947), .B(\sub_179_aco/carry[5] ), .Y(N2635) );
+  XNOR2X1 U7155 ( .A(\sub_179_aco/carry[4] ), .B(n5125), .Y(N2634) );
+  OR2X1 U7156 ( .A(n5127), .B(\sub_179_aco/carry[3] ), .Y(
+        \sub_179_aco/carry[4] ) );
+  XNOR2X1 U7157 ( .A(\sub_179_aco/carry[3] ), .B(n5127), .Y(N2633) );
+  OR2X1 U7158 ( .A(N2495), .B(\sub_179_aco/carry[2] ), .Y(
+        \sub_179_aco/carry[3] ) );
+  OR2X1 U7159 ( .A(n4134), .B(\sub_179_aco/carry[1] ), .Y(
+        \sub_179_aco/carry[2] ) );
+  XNOR2X1 U7160 ( .A(\sub_179_aco/carry[1] ), .B(n4123), .Y(N2631) );
+  XOR2X1 U7161 ( .A(n4947), .B(\add_173_S2_aco/carry[5] ), .Y(N2625) );
+  AND2X1 U7162 ( .A(\add_173_S2_aco/carry[4] ), .B(n5125), .Y(
+        \add_173_S2_aco/carry[5] ) );
+  AND2X1 U7163 ( .A(n5127), .B(N2617), .Y(\add_173_S2_aco/carry[4] ) );
   XOR2X1 U7164 ( .A(N2617), .B(n5127), .Y(N2623) );
-  OR2X1 U7165 ( .A(n7295), .B(n5118), .Y(\sub_168_aco/carry[1] ) );
+  OR2X1 U7165 ( .A(n7295), .B(n5118), .Y(\sub_179_aco/carry[1] ) );
   XNOR2X1 U7166 ( .A(n5118), .B(n7295), .Y(N2630) );
-  XOR2X1 U7167 ( .A(\add_134/carry[5] ), .B(N2522), .Y(N2572) );
+  XOR2X1 U7167 ( .A(\add_145/carry[5] ), .B(N2522), .Y(N2572) );
   NAND2BX1 U7168 ( .AN(n4869), .B(n4863), .Y(n5149) );
   NAND2X1 U7169 ( .A(n4868), .B(n5219), .Y(n5136) );
   NAND2X1 U7170 ( .A(n4871), .B(n5156), .Y(n5145) );
@@ -9835,7 +9835,7 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   CLKINVX1 U8636 ( .A(n7935), .Y(n8025) );
   CLKINVX1 U8637 ( .A(n8023), .Y(n8017) );
   NAND2X1 U8638 ( .A(n7936), .B(n7309), .Y(n8027) );
-  NAND2X1 U8639 ( .A(n7967), .B(n5115), .Y(\sub_168_aco/B[0] ) );
+  NAND2X1 U8639 ( .A(n7967), .B(n5115), .Y(\sub_179_aco/B[0] ) );
   NOR2X1 U8640 ( .A(n5118), .B(n3751), .Y(n7967) );
   OAI2BB2XL U8641 ( .B0(n7942), .B1(n8035), .A0N(n7942), .A1N(n8036), .Y(n3338) );
   OAI2BB2XL U8642 ( .B0(n7708), .B1(n8035), .A0N(N2549), .A1N(n8036), .Y(n3337) );
@@ -9883,17 +9883,17 @@ module LCD_CTRL ( clk, reset, cmd, cmd_valid, IROM_Q, IROM_rd, IROM_A,
   NAND2X1 U8674 ( .A(n4947), .B(n5125), .Y(N2617) );
   CLKINVX1 U8675 ( .A(n4947), .Y(n7505) );
   AOI2BB2X1 U8676 ( .B0(n8079), .B1(N2495), .A0N(n3408), .A1N(n8080), .Y(n8083) );
-  LCD_CTRL_DW01_add_5 add_2_root_add_0_root_add_207_3 ( .A({1'b0, 1'b0, n5099, 
+  LCD_CTRL_DW01_add_5 add_2_root_add_0_root_add_218_3 ( .A({1'b0, 1'b0, n5099, 
         n5094, n5093, n5090, n5083, n5081, n5075, n5072}), .B({1'b0, 1'b0, 
         n4861, n4862, n4863, n4864, n4865, N2779, n4866, N2781}), .CI(1'b0), 
         .SUM({SYNOPSYS_UNCONNECTED__0, N2740, N2739, N2738, N2737, N2736, 
         N2735, N2734, N2733, N2732}) );
-  LCD_CTRL_DW01_add_4 add_1_root_add_0_root_add_207_3 ( .A({1'b0, N2740, N2739, 
+  LCD_CTRL_DW01_add_4 add_1_root_add_0_root_add_218_3 ( .A({1'b0, N2740, N2739, 
         N2738, N2737, N2736, N2735, N2734, N2733, N2732}), .B({1'b0, 1'b0, 
         N2766, N2767, N2768, N2769, N2770, N2771, N2772, N2773}), .CI(1'b0), 
         .SUM({n8613, n8612, n8611, n8610, n8609, n8608, n8607, n8606, n8605, 
         n8604}) );
-  LCD_CTRL_DW01_add_3 add_0_root_add_0_root_add_207_3 ( .A({1'b0, 1'b0, n4867, 
+  LCD_CTRL_DW01_add_3 add_0_root_add_0_root_add_218_3 ( .A({1'b0, 1'b0, n4867, 
         n4868, n4869, n4870, n4871, n4872, n4873, N2765}), .B({n8613, n8612, 
         n8611, n8610, n8609, n8608, n8607, n8606, n8605, n8604}), .CI(1'b0), 
         .SUM({sum, SYNOPSYS_UNCONNECTED__1, SYNOPSYS_UNCONNECTED__2}) );

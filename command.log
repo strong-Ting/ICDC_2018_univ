@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version H-2013.03-SP5 for amd64 -- Oct 18, 2013
-#@ # Date:   Sat May 23 17:32:58 2020
-#@ # Run by: B10512133@DICS59
+#@ # Date:   Sun Sep  6 14:47:21 2020
+#@ # Run by: M10912039@DICS60
 #@ 
 
 source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
@@ -4803,8 +4803,8 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 
-source /home/DICS/B10512133/CIC_partice/CIC_2018_univ/.synopsys_dc.setup
-#@ # -- Starting source /home/DICS/B10512133/CIC_partice/CIC_2018_univ/.synopsys_dc.setup
+source /home/M10912039/GitHub/CIC_2018_univ/.synopsys_dc.setup
+#@ # -- Starting source /home/M10912039/GitHub/CIC_2018_univ/.synopsys_dc.setup
 
 #@ #   1. Modify this file to fit your own environment
 #@ #   2. Copy this file synopsys_dc.setup to .synopsys_dc.setup 
@@ -4857,7 +4857,7 @@ source /home/DICS/B10512133/CIC_partice/CIC_2018_univ/.synopsys_dc.setup
 #@ define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
 #@ 
 #@ 
-#@ # -- End source /home/DICS/B10512133/CIC_partice/CIC_2018_univ/.synopsys_dc.setup
+#@ # -- End source /home/M10912039/GitHub/CIC_2018_univ/.synopsys_dc.setup
 
 source DC_syn.tcl
 #@ # -- Starting source DC_syn.tcl
@@ -4907,4 +4907,3 @@ source DC_syn.tcl
 #@ 
 #@ # -- End source DC_syn.tcl
 
-exit
