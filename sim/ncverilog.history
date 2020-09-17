@@ -1,0 +1,11 @@
+s1(17Sep2020:13:51:19):  ncverilog testfixture.v ../src/LCD_CTRL.v 
+s2(17Sep2020:13:51:24):  ncverilog testfixture.v ../src/LCD_CTRL.v +define+tb1 
+s3(17Sep2020:13:51:32):  ncverilog testfixture.v ../src/LCD_CTRL.v +define+tb2 
+s4(17Sep2020:13:51:38):  ncverilog testfixture.v ../src/LCD_CTRL.v +define+tb3 
+s5(17Sep2020:13:53:56):  ncverilog testfixture.v ../syn/LCD_CTRL_syn.v +define+SDF +define+tb3 
+s6(17Sep2020:13:54:36):  ncverilog testfixture.v ../syn/LCD_CTRL_syn.v +define+SDF +define+tb3 
+s7(17Sep2020:13:54:44):  ncverilog testfixture.v ../syn/LCD_CTRL_syn.v +define+SDF +define+tb3 
+s8(17Sep2020:13:55:02):  ncverilog testfixture.v ../syn/LCD_CTRL_syn.v +define+SDF +define+tb3 
+s9(17Sep2020:13:55:14):  ncverilog testfixture.v ../syn/LCD_CTRL_syn.v -v ../../tsmc13_neg.v +define+SDF +define+tb3 
+s10(17Sep2020:13:55:24):  ncverilog testfixture.v ../syn/LCD_CTRL_syn.v -v ../../tsmc13_neg.v +define+SDF +define+tb2 
+s11(17Sep2020:13:55:32):  ncverilog testfixture.v ../syn/LCD_CTRL_syn.v -v ../../tsmc13_neg.v +define+SDF +define+tb1 

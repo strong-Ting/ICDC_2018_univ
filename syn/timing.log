@@ -1,0 +1,34 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : LCD_CTRL
+Version: Q-2019.12
+Date   : Thu Sep 17 13:53:09 2020
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: state_cs_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: busy (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  state_cs_reg[1]/CK (DFFRX1)              0.00       0.00 r
+  state_cs_reg[1]/Q (DFFRX1)               0.54       0.54 f
+  U8909/Y (NOR2X1)                         0.40       0.94 r
+  U8656/Y (CLKINVX1)                       0.23       1.17 f
+  U8655/Y (NAND2X1)                        0.10       1.28 r
+  busy (out)                               0.00       1.28 r
+  data arrival time                                   1.28
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
