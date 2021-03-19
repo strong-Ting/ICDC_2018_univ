@@ -141,9 +141,9 @@ module LCD_CTRL(clk,
         if (reset == 1'd1) counter <= 6'd0;
         else if (IRAM_valid == 1'd1)
         begin
-        if (counter == 6'd63) counter <= counter;
-        else counter <= counter +6'd1;
-    end
+            if (counter == 6'd63) counter <= counter;
+            else counter <= counter +6'd1;
+        end
     end
     //
     
